@@ -1,6 +1,4 @@
-#include <string>
-#include <vector>
-#include <map>
+#include <bit/stdc++.h>
 //klasa tworzy obiekt, któremu jest przypisany plik o podanej nazwie i sicezce
 class Dziennik_cis{
 public:
@@ -8,20 +6,28 @@ public:
 // czytanie pliku lub tworzenie pliku
     void odczytanie_pliku();
     void tworzenie_pliku();
-//wypisanie wartości w main
-    void wypisanie_pomiarów();
 //wyszukiwanie pomiarów po dacie i pomiarze (przciąrzenie)
     // data to wektor, który składa sie z trzech wartosc <dd,mm,yyyy> np.<05,05,2024> piąty maj 2024(potrzebny będzie warunek na to czy wektor poprawieni okresia date)
     void wyszukiwanie(date data);
     void wyszukiwanie(int wartosc);
-    //wers
+
+    //wyszukiwanie po dacie i wartosci
     std::vector<std::string> wyszukiwanie(date data);
     std::vector<std::int> wyszukiwanie(int wartosc);
-
-//funkcjia wypisująca wykres danego pliku na podstawie wybranego miesiąca
+    
+    //wypisanie wartości w main
+    void wypisanie_pomiarów();
+    // wykres zaczyna się od 800 do 1100
+    //funkcjia wypisująca wykres danego pliku na podstawie wybranego miesiąca
     void wykres_promiarow_main(int miesiac);
     //funkcjia tworzy plik txt z wykres danego pliku na podstawie wybranego miesiąca
     void wykres_promiarow_tworzenie_pliku(int miesiac);
+    //funkcja tworzac miacierz, która pozniej bedzie urzyta w funkcji wykresu pomiarow
+    std::vector<std::vector<std::string>> tworzenie_macierzy_wykresu();
+    
+    //wczytwanie i zapisywanie pomiarów.
+    void wczytywanie();
+    void zapisywanie();
     
 private:
 //sierzka i nazwa czytanego pliku
@@ -29,8 +35,7 @@ private:
     std::string nazwa_pliku;
     
 }
-//funkcja tworzac miacierz, która pozniej bedzie urzyta w funkcji wykresu pomiarow
-std::vector<std::vector<std::string>> tworzenie_macierzy_wykresu();
+
 //funkcja obracajaca macierz wykresu która pozniej bedzie urzyta w funkcji wykresu pomiarow
 void obrot_macierzy(std::vector<std::vector<std::string>> & M);
 //komunikat na poczatku, ktory mowi co urzytkownik moze zrobic
@@ -39,28 +44,40 @@ void komunikat();
 
 class pomiar{
 public:
-    pomiar(int wartosc, date data)
-    : wartosc_(set_wartosc(wartosc)), date_(date)
-    {};
+    pomiar(unsigned int wartosc, date data)
+    : , date_(date)
+    {set_wartosc(wartosc)};
     //sprawdzić czy jest nie ujemna
-    int set_wartosc(int wartosc);
+    void set_wartosc(unsigned int wartosc);
+    
+    unsigned int get_wartosc() const;
 private:
+    // wartosci od 800 do 1100
     int wartosc_
     date data_;
 }
 
+//settery trzeba ustawić tak żeby daty były zawsze poprawne
 class date{
 public:
     date(int d,int m, int r){
+        set_dzien(d);
+        set_miesiac(m);
+        set_rok(r);
+        
     };
     
-    int set_dzien(int dzien);
-    int set_miesiac(int dzien);
-    int set_rok(int rok);
+    unsigned int get_dzien() const;
+    unsigned int get_miesiac () const;
+    unsigned int get_rok() const;
+    
+    void set_dzien(int dzien);
+    void set_miesiac(int dzien);
+    void set_rok(int rok);
     
 private:
-    int dzien_;
-    int miesiac_;
-    int rok_;
+    unsigned int dzien_;
+    unsigned int miesiac_;
+    unsigned int rok_;
     
 }
