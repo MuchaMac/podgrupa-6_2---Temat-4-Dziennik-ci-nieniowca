@@ -120,5 +120,4 @@ void wykres_promiarow_main(unsigned int liczba_dni, std::vector<std::vector<std:
 void menu();
 void menu_akcje(Dziennik_cis &D);
 
-void
 #endif //PROJEKT_NPG_DC_HPP
