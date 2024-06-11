@@ -57,27 +57,29 @@ private:
     date data_;
 }
 
-//settery trzeba ustawić tak żeby daty były zawsze poprawne
 class date{
 public:
     date(int d,int m, int r){
-        set_dzien(d);
+        set_dzien(d, m, r);
         set_miesiac(m);
         set_rok(r);
-        
+
     };
-    
-    unsigned int get_dzien() const;
-    unsigned int get_miesiac () const;
-    unsigned int get_rok() const;
-    
-    void set_dzien(int dzien);
-    void set_miesiac(int dzien);
+
+    unsigned int get_dzien() const { return dzien_; }
+    unsigned int get_miesiac () const { return miesiac_; }
+    unsigned int get_rok() const { return rok_; }
+
+    void set_dzien(int dzien, int miesiac, int rok); //funkcja musi dostac miesiac oraz rok, żeby sprawdzic poprawność daty
+    void set_miesiac(int miesiac);
     void set_rok(int rok);
-    
+
+    std::string data_str() const;
+
+
 private:
     unsigned int dzien_;
     unsigned int miesiac_;
     unsigned int rok_;
-    
-}
+
+};
