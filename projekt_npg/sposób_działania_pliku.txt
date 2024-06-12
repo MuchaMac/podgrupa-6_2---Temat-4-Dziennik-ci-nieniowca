@@ -1,0 +1,10 @@
+1.aplikacja pyta, czy ma otworzyć plik czy go stworzyć(wyświetlenie błędu jeżeli chce się stworzyć plik o istniejącej nazwie)
+
+2.aplikacja pyta co chce dalej użytkownik zrobić:
+ a.zapisać nowe wartości do pliku
+   1.
+ b.stworzyć wykres histogram lub wykres
+ c.wyszukać pomiaru po dacie (zwraca jedną wartość) lub wartości (zwraca listę dni)
+ d.usunięcie jakiegoś pomiaru lub zmiany jego wartości
+ e.wyświetlić nazwę ścieżki, na której się znajdujesz
+ z.zamknięcie programu
