@@ -1,3 +1,0 @@
-/Users/kaptynmucha/Desktop/projekt_npg/cmake-build-debug/CMakeFiles/projekt_npg.dir
-/Users/kaptynmucha/Desktop/projekt_npg/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/kaptynmucha/Desktop/projekt_npg/cmake-build-debug/CMakeFiles/rebuild_cache.dir
