@@ -268,11 +268,11 @@ void menu_akcje(Dziennik_cis &D){
                 }
                 if(typ_w == 1) {
                     std::cout << "Dominanta dla ciśnieni_tetnicze_skurczowe" << std::endl;
-                    std::vector<std::vector<std::string>> wykres = mediana(wektor_z_liczbami_pomiarów, 40, 0);
+                    std::vector<std::vector<std::string>> wykres = dominanta(wektor_z_liczbami_pomiarów, 40, 0);
                     wykres_promiarow_main(dzień_ost, wykres, średnia_i_typ(wektor_z_liczbami_pomiarów,0), 40);
                 } else {
                     std::cout << "Domianta dla ciśnieni_tetnicze_rozkurczowe" << std::endl;
-                    std::vector<std::vector<std::string>> wykres = mediana(wektor_z_liczbami_pomiarów, 30,1);
+                    std::vector<std::vector<std::string>> wykres = dominanta(wektor_z_liczbami_pomiarów, 30,1);
                     wykres_promiarow_main(dzień_ost, wykres, średnia_i_typ(wektor_z_liczbami_pomiarów, 1),31);
                 }
             }
@@ -296,7 +296,7 @@ int średnia_i_typ(std::vector<std::vector<int>> wektor, int typ){
     return warotść/wektor.size();
 }
 
-std::vector<std::vector<std::string>> mediana(std::vector<std::vector<int>> wektor, int wartość, int typ){
+std::vector<std::vector<std::string>> dominanta(std::vector<std::vector<int>> wektor, int wartość, int typ){
     std::vector<int> wektor_ile_razy(wartość);
     for (int i = 0; i != wektor.size() ; ++i) {
         if (typ == 0) {
