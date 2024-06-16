@@ -101,6 +101,6 @@ date data_plus_jeden(date data);
 void dodaj_zera(date data_start, date data_end, std::string plik);
 std::vector<int> wyszuk_po_dacie(date data, std::string plik);
 int średnia_i_typ(std::vector<std::vector<int>> wektor, int typ);
-std::vector<std::vector<std::string>> mediana(std::vector<std::vector<int>> wektor, int wartość, int typ);
+std::vector<std::vector<std::string>> dominanta(std::vector<std::vector<int>> wektor, int wartość, int typ);
 std::vector<date> wyszukiwanie_po_wartości(int wartość, std::string nazwa_pliku, int typ);
 #endif //PROJEKT_NPG_DC_HPP
