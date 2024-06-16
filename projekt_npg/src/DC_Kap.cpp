@@ -130,9 +130,17 @@ void menu_akcje(Dziennik_cis &D){
             std::cout << "Wpisz warotść ciśnienia_tetnicze_skurczowe" << std::endl;
             int cts;
             std::cin >> cts;
+            while ( not(cts > 100 and cts <= 140)) {
+                std::cout << "ciśnienia_tetnicze_skurczowe nie może mieć wartość " << cts << " spróbuj jeszcze raz."<< std::endl;
+                std::cin >> cts;
+            }
             std::cout << "Wpisz warotść ciśnienia_tetnicze_rozkurczowe" << std::endl;
             int ctr;
             std::cin >> ctr;
+            while ( not( ctr > 60 and ctr <= 90)) {
+                std::cout << "ciśnienia_tetnicze_rozkurczowe nie może mieć wartość " << ctr << " spróbuj jeszcze raz."<< std::endl;
+                std::cin >> ctr;
+            }
             std::cout << "Wpisz dzień, w którym mierzeni się odbyło" << std::endl;
             int d;
             std::cin >> d;
